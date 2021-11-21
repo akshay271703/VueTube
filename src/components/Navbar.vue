@@ -1,6 +1,6 @@
 <template>
   <div class="navbar-body px-5 py-3">
-    <v-icon class="icon menu">mdi-menu</v-icon>
+    <v-icon class="icon menu" @click="toggleSidebar">mdi-menu</v-icon>
     <div class="layout">
       <span class="branding">VueTube</span>
       <div class="search-box">
@@ -8,7 +8,7 @@
           <input type="text" class="search" placeholder="Search" />
           <button><v-icon>mdi-magnify</v-icon></button>
         </div>
-        <v-icon class="microphone-icon">mdi-microphone</v-icon>
+        <v-icon class="microphone-icon icon">mdi-microphone</v-icon>
       </div>
       <div class="icons">
         <v-icon class="icon">mdi-video-outline</v-icon>
@@ -20,7 +20,17 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  methods: {
+    toggleSidebar() {
+      this.$store.dispatch("displaySidebar", !this.showSidebar);
+    },
+  },
+  computed: {
+    ...mapGetters(["showSidebar"]),
+  },
+};
 </script>
 
 <style scoped>
@@ -31,6 +41,9 @@ export default {};
 .navbar-body {
   display: flex;
   align-items: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 3;
 }
 .layout {
   display: flex;
@@ -46,8 +59,12 @@ export default {};
 }
 .icon {
   margin-right: 20px;
+  cursor: pointer;
 }
-
+.icon.menu {
+  padding-bottom: 10px;
+  margin-left: 5px;
+}
 .search-box {
   display: flex;
 }
@@ -72,9 +89,6 @@ export default {};
   }
   .search-box input {
     min-width: 300px;
-  }
-  .icon.menu {
-    padding-bottom: 10px;
   }
 }
 
