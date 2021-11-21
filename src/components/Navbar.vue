@@ -44,6 +44,7 @@ export default {
   position: fixed;
   width: 100vw;
   z-index: 3;
+  background-color: white;
 }
 .layout {
   display: flex;

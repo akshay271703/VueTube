@@ -55,9 +55,13 @@ span {
   font-weight: 300;
 }
 .sidebar-body {
-  max-width: 225px;
+  width: 250px;
   z-index: 2;
-  margin-top: 75px;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  background-color: white;
+  min-height: 100vh;
 }
 .sidebar-body.compact {
   max-width: 75px;
