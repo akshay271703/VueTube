@@ -32,7 +32,26 @@ export default {
 }
 .videos {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
+}
+@media (max-width: 1366px) {
+  .videos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .videos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .video-grid-body {
+    margin-left: 0px;
+    padding: 20px;
+  }
+  .videos {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 </style>

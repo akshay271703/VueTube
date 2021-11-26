@@ -119,6 +119,9 @@ export default {
     min-width: 150px;
     max-width: 150px;
   }
+  .icon.menu {
+    display: none;
+  }
 }
 @media (max-width: 400px) {
   .search-box input {

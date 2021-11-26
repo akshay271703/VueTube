@@ -22,7 +22,7 @@
         </span>
       </div>
     </div>
-    <div class="author mt-2">
+    <div class="author mt-5">
       <div class="header">
         <p class="author-title">{{ uploader }}</p>
         <button>SUBSCRIBE</button>
@@ -98,5 +98,44 @@ export default {
 .author {
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
+}
+@media (max-width: 1200px) {
+  .video-details {
+    max-width: 100vw;
+    padding: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .video-title {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  .options span {
+    margin-right: 10px;
+  }
+  .stats span {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+  }
+  .history {
+    margin-top: 10px;
+  }
+  .options {
+    margin-top: 10px;
+  }
+  .options span {
+    margin-right: 25px;
+  }
+  .stats span {
+    font-size: 16px;
+  }
 }
 </style>

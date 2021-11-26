@@ -1,6 +1,6 @@
 <template>
   <div class="video-detail-body">
-    <Sidebar />
+    <Sidebar class="sidebar" />
     <VideoComponent />
   </div>
 </template>
@@ -16,4 +16,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+@media (max-width: 1200px) {
+  .sidebar {
+    display: none;
+  }
+}
+</style>

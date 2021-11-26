@@ -1,6 +1,10 @@
 <template>
   <div class="sidebar-body py-1" :class="!showSidebar ? 'compact' : 'expand'">
-    <div class="option" :class="!showSidebar ? 'compact' : 'expand'">
+    <div
+      class="option"
+      :class="!showSidebar ? 'compact' : 'expand'"
+      @click="redirectHome"
+    >
       <v-icon>mdi-home</v-icon>
       <span>Home</span>
     </div>
@@ -46,6 +50,11 @@ export default {
   },
   computed: {
     ...mapGetters(["showSidebar"]),
+  },
+  methods: {
+    redirectHome() {
+      this.$router.push("/");
+    },
   },
 };
 </script>
@@ -100,5 +109,10 @@ span {
   margin-top: 10px;
   margin-bottom: 10px;
   border-top: 1px solid #ddd;
+}
+@media (max-width: 600px) {
+  .sidebar-body {
+    display: none;
+  }
 }
 </style>
